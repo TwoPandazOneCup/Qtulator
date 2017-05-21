@@ -1,6 +1,6 @@
 #include "funk.h"
 
-<<<<<<< HEAD
+
 #define DEBUG false
 
 std::string reknut(std::string input)
@@ -47,41 +47,8 @@ std::string reknut(std::string input)
 
 	std::ostringstream strs;
 	strs << res;
-	std::string resultat = strs.str();
+	std::string resultat = strs.str();;
 
 
 	return resultat;
-=======
-Svar::Svar(std::string input)
-{
-	stykke = input;
-	rekn_ut();
-}
-
-void Svar::rekn_ut()
-{
-	std::string tal_1 = "";
-	std::string tal_2 = "";
-
-	char op;
-
-	int stykkeNr = 1;
-
-
-	for(auto i : stykke)
-	{
-		if(i != '+' && i != '-' && stykkeNr == 1)
-			tal_1 += i;
-
-		if(i != '+' && i != '-' && stykkeNr == 2)
-			tal_2 += i;
-
-		if(i == '+' || i == '-')
-			op = i;
-	}
-}
-std::string Svar::getSvar();
-{
-	return svarResultat;
->>>>>>> c085935271eb61b72f1a7ca9eaa75af888a3cec3
 }

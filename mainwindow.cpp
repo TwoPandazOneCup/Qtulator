@@ -122,20 +122,11 @@ void MainWindow::handleButton()
 
 void MainWindow::inputFerdig()
 {
-<<<<<<< HEAD
 
 
 	auto svar = reknut(lineEdit->text().toStdString());
 
 	lineEdit->setText(QString::fromStdString(svar));
-=======
-	m_button->setText("hei");
-	lineEdit->setText("trykt");
-
-	QString send = lineEdit->text();
-
-	Svar x();
->>>>>>> c085935271eb61b72f1a7ca9eaa75af888a3cec3
 }
 
 
