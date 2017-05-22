@@ -45,6 +45,8 @@ private slots:
 	void add_div();
 	void add_punktum();
 	void add_exp();
+	void add_cos();
+	void add_sin();
 
 
 private:
@@ -75,6 +77,8 @@ private:
 	QPushButton *knapp_mult;
 	QPushButton *knapp_punktum;
 	QPushButton *knapp_exp;
+	QPushButton *knapp_cos;
+	QPushButton *knapp_sin;
 
 	QLineEdit *lineEdit;
 };

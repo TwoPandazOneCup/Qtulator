@@ -7,15 +7,6 @@
 #include <iostream>
 #include <assert.h>
 
-void lagre(const std::string &streng)
-{
-	std::fstream ost;
-	ost.open("hei.txt");
-	assert(ost.is_open());
-	ost << streng;
-	ost.close();
-}
-
 
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -58,6 +49,15 @@ MainWindow::MainWindow(QWidget *parent) :
 	knapp_punktum = new QPushButton(".", this);
 	knapp_punktum->move(110, 200);
 	knapp_punktum->resize(knappeBreidde, knappeBreidde);
+
+	knapp_cos = new QPushButton("cos",this);
+	knapp_cos->move(230, 120);
+	knapp_cos->resize(knappeBreidde, knappeBreidde);
+
+	knapp_sin = new QPushButton("sin", this);
+	knapp_sin->move(230, 180);
+	knapp_sin->resize(knappeBreidde, knappeBreidde);
+
 
 	knapp_0 = new QPushButton("0", this);
 	knapp_0->move(30, 200);
@@ -134,6 +134,8 @@ MainWindow::MainWindow(QWidget *parent) :
        QObject::connect(knapp_div, SIGNAL (released()), this, SLOT(add_div()));
        QObject::connect(knapp_punktum, SIGNAL (released()), this, SLOT(add_punktum()));
        QObject::connect(knapp_exp, SIGNAL (released()), this, SLOT(add_exp()));
+       QObject::connect(knapp_cos, SIGNAL (released()), this, SLOT(add_cos()));
+       QObject::connect(knapp_sin, SIGNAL (released()), this, SLOT(add_sin()));
 
 }
 
@@ -165,6 +167,16 @@ void MainWindow::add_punktum()
 void MainWindow::add_exp()
 {
 	lineEdit->insert("^");
+}
+
+void MainWindow::add_cos()
+{
+	lineEdit->setText("cos " + lineEdit->text());
+}
+
+void MainWindow::add_sin()
+{
+	lineEdit->setText("sin " + lineEdit->text());
 }
 
 void MainWindow::add_funk(const char *input)
