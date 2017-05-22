@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	knapp_cos->resize(knappeBreidde, knappeBreidde);
 
 	knapp_sin = new QPushButton("sin", this);
-	knapp_sin->move(230, 180);
+	knapp_sin->move(230, 160);
 	knapp_sin->resize(knappeBreidde, knappeBreidde);
 
 
