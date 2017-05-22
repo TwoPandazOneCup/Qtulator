@@ -33,6 +33,14 @@ MainWindow::MainWindow(QWidget *parent) :
 	knapp_minus->move(150, 120);
 	knapp_minus->resize(35,35);
 
+	knapp_mult = new QPushButton("*", this);
+	knapp_mult->move(150, 160);
+	knapp_mult->resize(35,35);
+
+	knapp_div = new QPushButton("/", this);
+	knapp_div->move(150, 200);
+	knapp_div->resize(35,35);
+
 	knapp_1 = new QPushButton("1", this);
 	knapp_1->move(30,80);
 	knapp_1->resize(35,35);
@@ -96,6 +104,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
        QObject::connect(knapp_pluss, SIGNAL (released()), this, SLOT(add_funk()));
        QObject::connect(knapp_minus, SIGNAL (released()), this, SLOT(add_minus()));
+       QObject::connect(knapp_mult, SIGNAL (released()), this, SLOT(add_mult()));
+       QObject::connect(knapp_div, SIGNAL (released()), this, SLOT(add_div()));
 
 }
 
@@ -104,9 +114,18 @@ void MainWindow::add_minus()
 	lineEdit->insert("-");
 }
 
+void MainWindow::add_mult()
+{
+	lineEdit->insert("*");
+}
+
+void MainWindow::add_div()
+{
+	lineEdit->insert("/");
+}
+
 void MainWindow::add_funk(char a)
 {
-	lineEdit->insert(&a);
 	lineEdit->insert("+");
 }
 

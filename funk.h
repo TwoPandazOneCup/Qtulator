@@ -6,7 +6,12 @@
 #include <iostream>
 #include <fstream>
 
+
+double red(const double svar1, const double svar2, const char *op);
+
 std::string reknut(std::string input);
+
+
 
 #ifndef FUNK_H
 #define FUNK_H

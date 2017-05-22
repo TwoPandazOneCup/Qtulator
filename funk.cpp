@@ -3,6 +3,7 @@
 
 #define DEBUG false
 
+
 std::string reknut(std::string input)
 {
 	std::vector<std::string> vek;
@@ -28,7 +29,9 @@ std::string reknut(std::string input)
 			std::cout << "input = "<< i << std::endl;
 		if(isdigit(i))
 			jobbestring += i;
-		if(!isdigit(i))
+		else if(i == '-' && k == 0 && jobbestring == "")
+			jobbestring = i + jobbestring;
+		else if(!isdigit(i))
 		{
 
 			vek.push_back(jobbestring);
@@ -41,7 +44,12 @@ std::string reknut(std::string input)
 	vek.push_back(jobbestring);
 
 
-	double res = atoi(vek[0].c_str()) + atoi(vek[1].c_str());
+	double svar1 = atoi(vek[0].c_str());
+	double svar2 = atoi(vek[1].c_str());
+
+	auto res = red(svar1, svar2, opArray);
+
+
 
 	std::cout << res << std::endl;
 
@@ -51,4 +59,20 @@ std::string reknut(std::string input)
 
 
 	return resultat;
+}
+
+double red(const double svar1, const double svar2, const char *op)
+{
+
+	switch(op[0])
+	{
+	case '+':
+		return svar1 + svar2;
+	case '-':
+		return svar1 - svar2;
+	case '*':
+		return svar1 * svar2;
+	case '/':
+		return svar1 / svar2;
+	}
 }

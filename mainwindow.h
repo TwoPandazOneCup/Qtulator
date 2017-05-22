@@ -39,6 +39,8 @@ private slots:
 	void add_funk(char a);
 	void add_funk();
 	void add_minus();
+	void add_mult();
+	void add_div();
 
 private:
 	char pluss = '+';
@@ -59,6 +61,8 @@ private:
 
 	QPushButton *knapp_pluss;
 	QPushButton *knapp_minus;
+	QPushButton *knapp_div;
+	QPushButton *knapp_mult;
 
 	QLineEdit *lineEdit;
 };
