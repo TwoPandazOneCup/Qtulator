@@ -5,6 +5,10 @@
 #include <assert.h>
 #include <iostream>
 #include <fstream>
+#include <cstdio>
+#include <math.h>
+
+#include <stdlib.h>
 
 
 double red(const double svar1, const double svar2, const char *op);

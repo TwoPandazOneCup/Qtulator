@@ -21,11 +21,13 @@ public:
 private slots:
 	void handleButton();
 	void inputFerdig();
-	void on_m_button_clicked();
+	void slett();
+	void backspace();
 
 
 	void on_pushButton_clicked();
 
+	void on_knapp0_trykt();
 	void on_knapp1_trykt();
 	void on_knapp2_trykt();
 	void on_knapp3_trykt();
@@ -36,19 +38,27 @@ private slots:
 	void on_knapp8_trykt();
 	void on_knapp9_trykt();
 
-	void add_funk(char a);
-	void add_funk();
+	void add_funk(const char *input);
+	void add_pluss();
 	void add_minus();
 	void add_mult();
 	void add_div();
+	void add_punktum();
+	void add_exp();
+
 
 private:
+	const int knappeBreidde = 35;
+
 	char pluss = '+';
 
 	Ui::MainWindow *ui;
 
 	QPushButton *m_button;
+	QPushButton *clear_button;
+	QPushButton *knapp_backspace;
 
+	QPushButton *knapp_0;
 	QPushButton *knapp_1;
 	QPushButton *knapp_2;
 	QPushButton *knapp_3;
@@ -63,6 +73,8 @@ private:
 	QPushButton *knapp_minus;
 	QPushButton *knapp_div;
 	QPushButton *knapp_mult;
+	QPushButton *knapp_punktum;
+	QPushButton *knapp_exp;
 
 	QLineEdit *lineEdit;
 };

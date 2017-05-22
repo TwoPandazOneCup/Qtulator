@@ -27,7 +27,7 @@ std::string reknut(std::string input)
 	{
 		if(DEBUG)
 			std::cout << "input = "<< i << std::endl;
-		if(isdigit(i))
+		if(isdigit(i) || i == '.')
 			jobbestring += i;
 		else if(i == '-' && k == 0 && jobbestring == "")
 			jobbestring = i + jobbestring;
@@ -41,11 +41,14 @@ std::string reknut(std::string input)
 			++k;
 		}
 	}
+	if(DEBUG)std::cout <<"jobbestring = "<< jobbestring << std::endl;
 	vek.push_back(jobbestring);
 
-
-	double svar1 = atoi(vek[0].c_str());
-	double svar2 = atoi(vek[1].c_str());
+		if(DEBUG)std::cout << "svar1 fo strtod = " << vek[0] <<std::endl;
+	double svar1 = std::stod(vek[0], nullptr);
+		if(DEBUG)std::cout << "svar1 = " << svar1 <<std::endl;
+	double svar2 = std::stod(vek[1], nullptr);
+		if(DEBUG)std::cout << "svar2 = " << svar2 <<std::endl;
 
 	auto res = red(svar1, svar2, opArray);
 
@@ -74,5 +77,7 @@ double red(const double svar1, const double svar2, const char *op)
 		return svar1 * svar2;
 	case '/':
 		return svar1 / svar2;
+	case '^':
+		return pow(svar1, svar2);
 	}
 }
