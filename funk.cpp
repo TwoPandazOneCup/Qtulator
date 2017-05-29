@@ -55,13 +55,17 @@ std::string reknut(std::string input)
 			++k;
 		}
 	}
+	std::setlocale(LC_ALL, "C");
+
 	if(DEBUG)std::cout <<"jobbestring = "<< jobbestring << std::endl;
 	vek.push_back(jobbestring);
 
 		if(DEBUG)std::cout << "svar1 fo strtod = " << vek[0] <<std::endl;
-	double svar1 = std::stod(vek[0], nullptr);
+	auto svar1 = std::stod(vek[0]);
 		if(DEBUG)std::cout << "svar1 = " << svar1 <<std::endl;
-	double svar2 = std::stod(vek[1], nullptr);
+
+		if(DEBUG)std::cout << "svar 2 for strtod = " <<vek[1] <<std::endl;
+	auto svar2 = std::stod(vek[1]);
 		if(DEBUG)std::cout << "svar2 = " << svar2 <<std::endl;
 
 	auto res = red(svar1, svar2, opArray);
@@ -114,6 +118,7 @@ std::string getcos(const std::string &input)
 	resultat = trs.str();
 	return resultat;
 }
+
 std::string getsin(const std::string &input)
 {
 	std::string substr = "";
@@ -131,4 +136,6 @@ std::string getsin(const std::string &input)
 	resultat = trs.str();
 	return resultat;
 }
+
+
 
